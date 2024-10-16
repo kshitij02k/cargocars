@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CARGO | Authentication</title>
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error-message, .success-message {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .error-message {
+            color: red;
+        }
+        .success-message {
+            color: green;
+        }
+        .toggle-btn {
+            background-color: transparent;
+            color: #007bff;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #welcomeMessage {
+            text-align: center;
+            font-size: 1.2em;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h2 id="auth-title">User Login</h2>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button id="loginButton">Login</button>
+            <p id="loginMessage" class="error-message"></p>
+        </div>
+
+        <!-- Registration Form (Initially Hidden) -->
+        <div id="registerForm" style="display: none;">
+            <input type="text" id="registerUsername" placeholder="Username" required>
+            <!-- Removed the Confirm Username field -->
+            <input type="password" id="registerPassword" placeholder="Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+            <!-- New Address Line input -->
+            <input type="text" id="addressLine" placeholder="Address Line" required>
+            <!-- New Pin Code input -->
+            <input type="text" id="pinCode" placeholder="Pin Code" required>
+            <button id="registerButton">Register</button>
+            <p id="registerMessage" class="error-message"></p>
+        </div>
+
+        <!-- Toggle Button -->
+        <button class="toggle-btn" id="toggleFormBtn">Don't have an account? Register</button>
+
+        <!-- Welcome Message Area -->
+        <p id="welcomeMessage"></p>
+    </div>
+
+    <script src="login-register.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>

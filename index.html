@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>CARGO | Home</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav__header">
+                <div class="nav__logo">
+                    <a href="index.html">CARGO</a>
+                </div>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <!-- Use event listeners for View Cars and Feedback links -->
+                <li><a href="#" id="viewCarsLink">View Cars</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#" id="feedbackLink">Feedback</a></li> <!-- Use event listener for Feedback -->
+                <li><a href="login-register.html" class="btn btn__login">Login/Register</a></li>
+            </ul>
+        </nav>
+        
+        <div class="section__container header__container" id="home">
+            <div class="header__image">
+                <img src="https://sarajevorentacar.ba/wp-content/uploads/2016/07/2-SB-How-work-1.png" alt="header" />
+            </div>
+            <div class="header__content">
+                <h1>Looking to save more on your rental car?</h1>
+                <p>Discover your perfect ride with CARGO!</p>
+                <div class="header__links">
+                    <a href="#" id="viewCarsBtn" class="btn btn__primary">View Cars</a> <!-- Use event listener -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Script to handle redirects before login -->
+    <script>
+        document.getElementById('viewCarsLink').addEventListener('click', function() {
+            localStorage.setItem('redirectTo', 'view-cars.html'); // Store redirect destination
+            window.location.href = 'login-register.html'; // Redirect to the login page
+        });
+
+        document.getElementById('feedbackLink').addEventListener('click', function() {
+            localStorage.setItem('redirectTo', 'feedback.html'); // Store redirect destination
+            window.location.href = 'login-register.html'; // Redirect to the login page
+        });
+
+        // For the button in the header that also links to View Cars
+        document.getElementById('viewCarsBtn').addEventListener('click', function() {
+            localStorage.setItem('redirectTo', 'view-cars.html'); // Store redirect destination
+            window.location.href = 'login-register.html'; // Redirect to the login page
+        });
+    </script>
+</body>
+</html>
